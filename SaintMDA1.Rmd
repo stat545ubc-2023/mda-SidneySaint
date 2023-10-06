@@ -1,0 +1,268 @@
+---
+title: "Mini Data-Analysis Deliverable 1"
+output: html_document
+author: "Sidney S."
+---
+
+# STAT 545A: Mini Data Analysis Project 
+
+2.  Load the packages below.
+
+```{r}
+library(datateachr)
+library(tidyverse)
+```
+
+1.1 **(1 point)** Out of the 7 datasets available in the `datateachr` package, choose **4** that appeal to you based on their description. Write your choices below:
+
+<!-------------------------- Start your work below ---------------------------->
+
+1: CHOICE_1\cancer_sample\
+2: CHOICE_2\flow_sample\
+3: CHOICE_3\steam_games\
+4: CHOICE_4\vancouver_trees\
+
+<!----------------------------------------------------------------------------->
+
+1.2 **(6 points)** One way to narrowing down your selection is to *explore* the datasets. Use your knowledge of dplyr to find out at least *3* attributes about each of these datasets (an attribute is something such as number of rows, variables, class type...). The goal here is to have an idea of *what the data looks like*.
+
+*Hint:* This is one of those times when you should think about the cleanliness of your analysis. I added a single code chunk for you below, but do you want to use more than one? Would you like to write more comments outside of the code chunk?
+
+<!-------------------------- Start your work below ---------------------------->
+## First explore CHOICE 1 / cancer_sample
+```{r explore_cancer_sample}
+# The 4 attributes I am most interested in are:
+# [1] number of rows 
+# [2] number of columns 
+# [3] column names / variables in this data set
+glimpse(cancer_sample) # There are 569 rows and 32 columns. Variable names (and classes) are also printed in output. 
+
+
+
+# [4] number of distinct sample IDs 
+n_distinct(cancer_sample$ID)  # There are 569 distinct cancer sample IDs
+```
+
+
+#### Other exploration /things I want to know beyond the 4 attributes explored with dplyr:
+```{r explore_cancer_sample_2}
+class(cancer_sample)
+nrow(cancer_sample) - n_distinct(cancer_sample$ID)  # no double IDs
+
+sum(is.na(cancer_sample$ID))  # no data without an associated ID 
+
+sum(is.na(cancer_sample))  # No missing data at all? Fabulous!
+
+# what are the possible sample diagnoses?
+unique(cancer_sample$diagnosis) # M for malignant and B for benign I assume.
+```
+
+## Explore CHOICE 2 / flow_sample
+```{r flow_sample}
+# The 4 attributes I am most interested in are:
+# [1] number of rows 
+# [2] number of columns 
+# [3] column names / variables in this data set
+glimpse(flow_sample) 
+# There are 218 rows and 7 columns. Variable names (and classes) are also printed in output. 
+
+# [4] number of distinct station IDs 
+n_distinct(flow_sample$station_id) 
+# There is only one station ID (all of this data is from a simgle station ?) 
+```
+
+#### Other exploration /things I want to know beyond the 4 attributes explored with dplyr:
+```{r explore_flow_sample2}
+class(flow_sample)
+sum(is.na(flow_sample)) # There are 125 missing data points 
+sum(is.na(flow_sample$sym)) # and most of them are in the "sym" variable
+# where are the other mising data points?
+colSums(is.na(flow_sample))
+# also try to figure out what column 'sym' is by the data it holds:
+unique(flow_sample$sym) # I still don't know what 'sym' is.. 
+```
+
+## Explore CHOICE 3/ steam_games
+```{r steam_games}
+# The 4 attributes I am most interested in are:
+# [1] number of rows 
+# [2] number of columns 
+# [3] column names / variables in this data set
+glimpse(steam_games) # There are 40,833 rows and 21 columns. Variable names (and classes - mostly character here) are also printed in output. 
+
+# [4] number of distinct IDs (for games)
+n_distinct(steam_games$id) #40833
+
+```
+
+#### Other exploration /things I want to know beyond the 4 attributes explored with dplyr:
+```{r explore_steam_games2}
+class(steam_games)
+nrow(steam_games) - n_distinct(steam_games$id) # no double game ids - good
+
+sum(is.na(steam_games$id)) # just checking one of the unique ids isn't 'NA'
+
+sum(is.na(steam_games))#  180899 is a lot of missing data 
+
+# look to see where (in which variable) the data are missing:
+colSums(is.na(steam_games))
+# so almost everywhere
+```
+
+## Explore CHOICE 4/ vancouver_trees
+```{r vancouver_trees}
+# The 4 attributes I am most interested in are:
+# [1] number of rows 
+# [2] number of columns 
+# [3] column names / variables in this data set
+glimpse(vancouver_trees)
+# There are 146,611 rows and 20 columns. Variable names (and classes) are also printed in output. 
+
+# [4] number of distinct tree ids
+n_distinct(vancouver_trees$tree_id) 
+# 146611
+
+
+```
+
+#### Other exploration /things I want to know beyond the 4 attributes explored with dplyr:
+```{r explore_vancouver_trees2}
+class(vancouver_trees)
+
+nrow(vancouver_trees) - n_distinct(vancouver_trees$tree_id) # no repeat tree IDs - good
+sum(is.na(vancouver_trees$tree_id)) # just checking one of the unique Tree ids isn't 'NA'
+
+sum(is.na(vancouver_trees))# 191135
+
+# Where are the data missing?
+colSums(is.na(vancouver_trees)) 
+```
+<!----------------------------------------------------------------------------->
+
+1.3 **(1 point)** Now that you've explored the 4 datasets that you were initially most interested in, let's narrow it down to 1. What lead you to choose this one? Briefly explain your choice below.
+
+<!-------------------------- Start your work below ---------------------------->
+
+### I am choosing the first data set I examined / CHOICE  1: 'cancer_sample'. 
+
+####Three reasons for my choice:
+####[1] This is the only data set with no missing data; 
+####[2] Most variables are numeric and continous. 
+####(Both [1] and [2] should simplify later analyses.); 
+####[3] It is health-related and therefore the most interesting to me.
+
+<!----------------------------------------------------------------------------->
+
+1.4 **(2 points)** Time for a  final decision! Going back to the beginning, it's important to have an *end goal* in mind. For example, if I had chosen the `titanic` dataset for my project, I might've wanted to explore the relationship between survival and other variables. Try to think of 1 research question that you would want to answer with your dataset. Note it down below.
+
+<!-------------------------- Start your work below ---------------------------->
+
+####MAIN REASEARCH QUESTION: Do malignant versus benign tumours differ in their radius (radius_mean) and/or concavity (concavity_mean)? 
+
+####NB: I am assuiming that for: 'cancer_sample$diagnosis', "M"= malignant and "B"= benign
+
+<!----------------------------------------------------------------------------->
+
+# Task 2: Exploring your dataset 
+
+If we rewind and go back to the learning objectives, you'll see that by the end of this deliverable, you should have formulated *4* research questions about your data that you may want to answer during your project. However, it may be handy to do some more exploration on your dataset of choice before creating these questions - by looking at the data, you may get more ideas. **Before you start this task, read all instructions carefully until you reach START HERE under Task 3**.
+
+2.1 **(12 points)** Complete *4 out of the following 8 exercises* to dive deeper into your data. All datasets are different and therefore, not all of these tasks may make sense for your data - which is why you should only answer *4*. 
+
+Make sure that you're using dplyr and ggplot2 rather than base R for this task. Outside of this project, you may find that you prefer using base R functions for certain tasks, and that's just fine! But part of this project is for you to practice the tools we learned in class, which is dplyr and ggplot2.
+
+1.  Plot the distribution of a numeric variable.
+2.  Create a new variable based on other variables in your data (only if it makes sense)
+3.  Investigate how many missing values there are per variable. Can you find a way to plot this?
+4.  Explore the relationship between 2 variables in a plot.
+5.  Filter observations in your data according to your own criteria. Think of what you'd like to explore - again, if this was the `titanic` dataset, I may want to narrow my search down to passengers born in a particular year...
+6.  Use a boxplot to look at the frequency of different observations within a single variable. You can do this for more than one variable if you wish!
+7.  Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.
+8.  Use a density plot to explore any of your variables (that are suitable for this type of plot).
+
+2.2 **(4 points)** For each of the 4 exercises that you complete, provide a *brief explanation* of why you chose that exercise in relation to your data (in other words, why does it make sense to do that?), and sufficient comments for a reader to understand your reasoning and code.
+
+
+<!-------------------------- Start your work below ---------------------------->
+
+## 1.  Plot the distribution of a numeric variable.
+I am going to plot the distribution of: cancer_sample$radius_mean
+because I want to ensure there is some varaiation in the radii of the samples - otherwise we may not be able to detect a difference in radius between malignant and benign tumours
+```{r distribution}
+
+ggplot(dat=cancer_sample, aes(x=radius_mean)) +
+  geom_histogram(colour = "blue") +
+  labs(x = "Radius of Cancer Sample", title = "Distribution of Cancer Sample Radii")
+
+```
+  
+  COMMENT(S): This looks basically normally distributed (and variable). 0 concerns.
+
+## 5.  Filter observations in your data according to your own criteria.
+
+Let's filter out observations to check that the radii data of malignant tumours is still normally distributed (because it is conceivable that malignant tumours are progressed and abnormal, so let's just see what the radii of the more severe cancer samples look like)
+
+```{r filter}
+
+#filter
+malignant_cancer_samples <- cancer_sample %>% 
+  filter(diagnosis=="M")
+
+
+# the next step, not an explicit part of this exercise, is to remake the histogram of cancer sample radii within malignant samples: #plot:
+ggplot(dat=malignant_cancer_samples, aes(x=radius_mean)) +
+  geom_histogram(colour = "red") +
+  labs(x = "Radius of Cancer Sample", title = "Distribution of Malignant Cancer Sample Radii")
+```
+
+  COMMENT(S): Good thing I checked - this almost looks like a bimodal distribution. I may need to return to this later, or at least keep this in mind while I try to answer my research question.
+
+## 8.  Use a density plot to explore any of your variables (that are suitable for this type of plot).
+
+If we smooth the malignant cancer radii data via density plot, does it still look bimodal?
+```{r densityplot}
+
+cancer_sample %>%
+  filter(diagnosis=="M") %>%
+  ggplot(aes(x=radius_mean)) +
+    geom_density(alpha=0.5) +
+    labs(x = "Radius of Cancer Sample", title = "Density Distribution of Malignant Cancer Sample Radii")
+
+```
+
+  COMMENT(S): Yikes - these data look bimodal.
+
+## 7.  Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.
+Recall that my research question is: Do malignant versus benign tumours differ in their radius (radius_mean) and/or concavity (concavity_mean)?  - so I am goint to select the hypothesize predictor: (diagnosis), and dependent variables (radius_mean and concavity_mean):
+```{r tibble}
+
+cancer_sample_desired_vars <- cancer_sample %>%
+  select(ID, diagnosis, radius_mean, concavity_mean) 
+
+# and make sure it is a tibble
+cancer_sample_desired_vars <- as_tibble(cancer_sample_desired_vars)
+
+# now the data frame with the desired variables looks like:
+head(cancer_sample_desired_vars)
+
+# Aside: note that I have already checked for any missing data in these variables and there is none. 
+```
+<!----------------------------------------------------------------------------->
+
+# Task 3: Choose research questions 
+
+**(4 points)** So far, you have chosen a dataset and gotten familiar with it through exploring the data. You have also brainstormed one research question that interested you (Task 1.4).  Now it's time to pick 4 research questions that you would like to explore in Milestone 2! Write the 4 questions and any additional comments below. 
+
+<!--- *****START HERE***** --->
+
+### 4 Research Questions: 
+####[1] MAIN REASEARCH QUESTION: Do malignant versus benign tumours differ in their radius (radius_mean) and/or concavity (concavity_mean)? 
+####[2] follow-up research question 1: if so, by how much?
+####[3] follow-up research question 2: can we use tumour radius and/or concavity to predict the diagnosis? 
+####[4] Related: Are sample concavity and radius related? (amongst both benign and malignant tumours?)
+        
+<!----------------------------->
+
+### Attribution
+
+Thanks to Icíar Fernández Boyano for mostly putting this together, and Vincenzo Coia for launching.
