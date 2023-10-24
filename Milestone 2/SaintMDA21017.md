@@ -1053,11 +1053,11 @@ outputmodgtCIs <- # refs [8] & [9]
 outputmodgtCIs
 ```
 
-<div id="hthkvjybhk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lshkjtgxsn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
-&#10;#hthkvjybhk .gt_table {
+&#10;#lshkjtgxsn .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1081,7 +1081,7 @@ outputmodgtCIs
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_heading {
+&#10;#lshkjtgxsn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1092,7 +1092,7 @@ outputmodgtCIs
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_title {
+&#10;#lshkjtgxsn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1103,7 +1103,7 @@ outputmodgtCIs
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#hthkvjybhk .gt_subtitle {
+&#10;#lshkjtgxsn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1114,12 +1114,12 @@ outputmodgtCIs
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#hthkvjybhk .gt_bottom_border {
+&#10;#lshkjtgxsn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_col_headings {
+&#10;#lshkjtgxsn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1133,7 +1133,7 @@ outputmodgtCIs
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_col_heading {
+&#10;#lshkjtgxsn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,7 +1152,7 @@ outputmodgtCIs
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#hthkvjybhk .gt_column_spanner_outer {
+&#10;#lshkjtgxsn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1163,13 +1163,13 @@ outputmodgtCIs
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#hthkvjybhk .gt_column_spanner_outer:first-child {
+&#10;#lshkjtgxsn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#hthkvjybhk .gt_column_spanner_outer:last-child {
+&#10;#lshkjtgxsn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#hthkvjybhk .gt_column_spanner {
+&#10;#lshkjtgxsn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1180,7 +1180,7 @@ outputmodgtCIs
   display: inline-block;
   width: 100%;
 }
-&#10;#hthkvjybhk .gt_group_heading {
+&#10;#lshkjtgxsn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1204,7 +1204,7 @@ outputmodgtCIs
   border-right-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#hthkvjybhk .gt_empty_group_heading {
+&#10;#lshkjtgxsn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1218,13 +1218,13 @@ outputmodgtCIs
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#hthkvjybhk .gt_from_md > :first-child {
+&#10;#lshkjtgxsn .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#hthkvjybhk .gt_from_md > :last-child {
+&#10;#lshkjtgxsn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#hthkvjybhk .gt_row {
+&#10;#lshkjtgxsn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1242,7 +1242,7 @@ outputmodgtCIs
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#hthkvjybhk .gt_stub {
+&#10;#lshkjtgxsn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,7 +1254,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hthkvjybhk .gt_stub_row_group {
+&#10;#lshkjtgxsn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1267,10 +1267,10 @@ outputmodgtCIs
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#hthkvjybhk .gt_row_group_first td {
+&#10;#lshkjtgxsn .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#hthkvjybhk .gt_summary_row {
+&#10;#lshkjtgxsn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1279,14 +1279,14 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hthkvjybhk .gt_first_summary_row {
+&#10;#lshkjtgxsn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_first_summary_row.thick {
+&#10;#lshkjtgxsn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#hthkvjybhk .gt_last_summary_row {
+&#10;#lshkjtgxsn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1295,7 +1295,7 @@ outputmodgtCIs
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_grand_summary_row {
+&#10;#lshkjtgxsn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1304,7 +1304,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hthkvjybhk .gt_first_grand_summary_row {
+&#10;#lshkjtgxsn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1313,10 +1313,10 @@ outputmodgtCIs
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_striped {
+&#10;#lshkjtgxsn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#hthkvjybhk .gt_table_body {
+&#10;#lshkjtgxsn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1324,7 +1324,7 @@ outputmodgtCIs
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_footnotes {
+&#10;#lshkjtgxsn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1337,7 +1337,7 @@ outputmodgtCIs
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_footnote {
+&#10;#lshkjtgxsn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1345,7 +1345,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hthkvjybhk .gt_sourcenotes {
+&#10;#lshkjtgxsn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1358,36 +1358,36 @@ outputmodgtCIs
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#hthkvjybhk .gt_sourcenote {
+&#10;#lshkjtgxsn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hthkvjybhk .gt_left {
+&#10;#lshkjtgxsn .gt_left {
   text-align: left;
 }
-&#10;#hthkvjybhk .gt_center {
+&#10;#lshkjtgxsn .gt_center {
   text-align: center;
 }
-&#10;#hthkvjybhk .gt_right {
+&#10;#lshkjtgxsn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#hthkvjybhk .gt_font_normal {
+&#10;#lshkjtgxsn .gt_font_normal {
   font-weight: normal;
 }
-&#10;#hthkvjybhk .gt_font_bold {
+&#10;#lshkjtgxsn .gt_font_bold {
   font-weight: bold;
 }
-&#10;#hthkvjybhk .gt_font_italic {
+&#10;#lshkjtgxsn .gt_font_italic {
   font-style: italic;
 }
-&#10;#hthkvjybhk .gt_super {
+&#10;#lshkjtgxsn .gt_super {
   font-size: 65%;
 }
-&#10;#hthkvjybhk .gt_two_val_uncert {
+&#10;#lshkjtgxsn .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1395,27 +1395,27 @@ outputmodgtCIs
   vertical-align: -0.25em;
   margin-left: 0.1em;
 }
-&#10;#hthkvjybhk .gt_footnote_marks {
+&#10;#lshkjtgxsn .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
-&#10;#hthkvjybhk .gt_asterisk {
+&#10;#lshkjtgxsn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#hthkvjybhk .gt_slash_mark {
+&#10;#lshkjtgxsn .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
-&#10;#hthkvjybhk .gt_fraction_numerator {
+&#10;#lshkjtgxsn .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
-&#10;#hthkvjybhk .gt_fraction_denominator {
+&#10;#lshkjtgxsn .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1650,22 +1650,15 @@ Thanks to Victor Yuan for mostly putting this together.
 
 ### Sidney’s References for syntax/tricks:
 
-\[1\] Gnueghoidune
-(2022).https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object
-\[2\] Statology (n.d.) <https://www.statology.org/add-text-to-ggplot/>
-\[3\]: Zach (2020), Statology from
-<https://www.statology.org/color-by-factor-ggplot2/> \[4\] R Graphics
-Cookbook lesson 8.4 (n.d.) <https://r-graphics.org/recipe-axis-order>
-\[5\] Ronak Shah. (2020).
-<https://stackoverflow.com/questions/62715534/pivot-longer-with-groups-and-remove-column-name-prefixes>
-\[6\] Mohan Govindasamy
-(2021).https://stackoverflow.com/questions/66043657/remove-from-end-of-column-names-in-r
-\[7\]: Robinson et al., (n.d.)
-<https://broom.tidymodels.org/reference/tidy.lm.html> \[8\] Iannone et
-al.,
-(n.d.)<https://gt.rstudio.com/articles/gt.html#>:~:text=The%20main%20entry%20point%20into,valid%20Table%20Data%20for%20gt.
-\[9\] Rdocumentation (n.d.)
-<https://search.r-project.org/CRAN/refmans/gt/html/tab_header.html#>:~:text=Add%20a%20header%20part%20with,a%20subtitle%20for%20the%20table
-\# for teaching me how to use package ‘gt’ and for some syntax \[10\]
-mishrapriyank17 (n.d.)
-<https://www.geeksforgeeks.org/how-to-plot-a-logistic-regression-curve-in-r/>
+``` r
+#[1] Gnueghoidune (2022).https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object
+#[2] Statology (n.d.) https://www.statology.org/add-text-to-ggplot/
+#[3]: Zach (2020), Statology from https://www.statology.org/color-by-factor-ggplot2/ 
+#[4] R Graphics Cookbook lesson 8.4 (n.d.) https://r-graphics.org/recipe-axis-order 
+#[5] Ronak Shah. (2020). https://stackoverflow.com/questions/62715534/pivot-longer-with-groups-and-remove-column-name-prefixes
+#[6] Mohan Govindasamy (2021).https://stackoverflow.com/questions/66043657/remove-from-end-of-column-names-in-r
+#[7]: Robinson et al., (n.d.) https://broom.tidymodels.org/reference/tidy.lm.html
+#[8] Iannone et al., (n.d.)https://gt.rstudio.com/articles/gt.html#:~:text=The%20main%20entry%20point%20into,valid%20Table%20Data%20for%20gt.
+#[9] Rdocumentation (n.d.) https://search.r-project.org/CRAN/refmans/gt/html/tab_header.html#:~:text=Add%20a%20header%20part%20with,a%20subtitle%20for%20the%20table # for teaching me how to use package 'gt' and for some syntax 
+#[10] mishrapriyank17 (n.d.) https://www.geeksforgeeks.org/how-to-plot-a-logistic-regression-curve-in-r/
+```

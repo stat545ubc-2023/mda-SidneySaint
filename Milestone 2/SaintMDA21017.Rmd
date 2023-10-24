@@ -681,13 +681,15 @@ You've tagged a release for Milestone 2.
 Thanks to Victor Yuan for mostly putting this together.
 
 ### Sidney's References for syntax/tricks:
-[1] Gnueghoidune (2022).https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object
-[2] Statology (n.d.) https://www.statology.org/add-text-to-ggplot/
-[3]: Zach (2020), Statology from https://www.statology.org/color-by-factor-ggplot2/ 
-[4] R Graphics Cookbook lesson 8.4 (n.d.) https://r-graphics.org/recipe-axis-order 
-[5] Ronak Shah. (2020). https://stackoverflow.com/questions/62715534/pivot-longer-with-groups-and-remove-column-name-prefixes
-[6] Mohan Govindasamy (2021).https://stackoverflow.com/questions/66043657/remove-from-end-of-column-names-in-r
-[7]: Robinson et al., (n.d.) https://broom.tidymodels.org/reference/tidy.lm.html
-[8] Iannone et al., (n.d.)https://gt.rstudio.com/articles/gt.html#:~:text=The%20main%20entry%20point%20into,valid%20Table%20Data%20for%20gt.
-[9] Rdocumentation (n.d.) https://search.r-project.org/CRAN/refmans/gt/html/tab_header.html#:~:text=Add%20a%20header%20part%20with,a%20subtitle%20for%20the%20table # for teaching me how to use package 'gt' and for some syntax 
-[10] mishrapriyank17 (n.d.) https://www.geeksforgeeks.org/how-to-plot-a-logistic-regression-curve-in-r/
+```{r references} 
+#[1] Gnueghoidune (2022).https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object
+#[2] Statology (n.d.) https://www.statology.org/add-text-to-ggplot/
+#[3]: Zach (2020), Statology from https://www.statology.org/color-by-factor-ggplot2/ 
+#[4] R Graphics Cookbook lesson 8.4 (n.d.) https://r-graphics.org/recipe-axis-order 
+#[5] Ronak Shah. (2020). https://stackoverflow.com/questions/62715534/pivot-longer-with-groups-and-remove-column-name-prefixes
+#[6] Mohan Govindasamy (2021).https://stackoverflow.com/questions/66043657/remove-from-end-of-column-names-in-r
+#[7]: Robinson et al., (n.d.) https://broom.tidymodels.org/reference/tidy.lm.html
+#[8] Iannone et al., (n.d.)https://gt.rstudio.com/articles/gt.html#:~:text=The%20main%20entry%20point%20into,valid%20Table%20Data%20for%20gt.
+#[9] Rdocumentation (n.d.) https://search.r-project.org/CRAN/refmans/gt/html/tab_header.html#:~:text=Add%20a%20header%20part%20with,a%20subtitle%20for%20the%20table # for teaching me how to use package 'gt' and for some syntax 
+#[10] mishrapriyank17 (n.d.) https://www.geeksforgeeks.org/how-to-plot-a-logistic-regression-curve-in-r/
+````
