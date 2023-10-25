@@ -275,44 +275,6 @@ mean, and two other summary statistics of one numerical variable across
 the groups of one categorical variable from your data.’*
 
 ``` r
-head(cancer_sample, n=2)
-```
-
-    ## # A tibble: 2 × 32
-    ##       ID diagnosis radius_mean texture_mean perimeter_mean area_mean
-    ##    <dbl> <chr>           <dbl>        <dbl>          <dbl>     <dbl>
-    ## 1 842302 M                18.0         10.4           123.      1001
-    ## 2 842517 M                20.6         17.8           133.      1326
-    ## # ℹ 26 more variables: smoothness_mean <dbl>, compactness_mean <dbl>,
-    ## #   concavity_mean <dbl>, concave_points_mean <dbl>, symmetry_mean <dbl>,
-    ## #   fractal_dimension_mean <dbl>, radius_se <dbl>, texture_se <dbl>,
-    ## #   perimeter_se <dbl>, area_se <dbl>, smoothness_se <dbl>,
-    ## #   compactness_se <dbl>, concavity_se <dbl>, concave_points_se <dbl>,
-    ## #   symmetry_se <dbl>, fractal_dimension_se <dbl>, radius_worst <dbl>,
-    ## #   texture_worst <dbl>, perimeter_worst <dbl>, area_worst <dbl>, …
-
-``` r
-colnames(cancer_sample)
-```
-
-    ##  [1] "ID"                      "diagnosis"              
-    ##  [3] "radius_mean"             "texture_mean"           
-    ##  [5] "perimeter_mean"          "area_mean"              
-    ##  [7] "smoothness_mean"         "compactness_mean"       
-    ##  [9] "concavity_mean"          "concave_points_mean"    
-    ## [11] "symmetry_mean"           "fractal_dimension_mean" 
-    ## [13] "radius_se"               "texture_se"             
-    ## [15] "perimeter_se"            "area_se"                
-    ## [17] "smoothness_se"           "compactness_se"         
-    ## [19] "concavity_se"            "concave_points_se"      
-    ## [21] "symmetry_se"             "fractal_dimension_se"   
-    ## [23] "radius_worst"            "texture_worst"          
-    ## [25] "perimeter_worst"         "area_worst"             
-    ## [27] "smoothness_worst"        "compactness_worst"      
-    ## [29] "concavity_worst"         "concave_points_worst"   
-    ## [31] "symmetry_worst"          "fractal_dimension_worst"
-
-``` r
 # In order to investigate if malognant (M) versus benign (B) tumours differ in their concavity, I wil compute the range, mean, standard deviation (SD), and median across the groups of sample diagnosis (M versus B)
 ## I will also leave the min and max values of concavity by sample diagnosis in (at end of the summary table), just to characterize the concavity range.
 
@@ -378,16 +340,16 @@ cancer_sample %>%
 ![](SaintMDA21017_files/figure-gfm/RQ2GT8-1.png)<!-- -->
 
 ``` r
-# This graph illustrates what the summary table I already made indicated about differences in variation and average in sample radii by whether the cancer was malignant or benign. It suggests that the answer to my first research question: "Do malignant versus benign tumours differ in their radius (radius_mean)? If so, by how much?" Is: Yes, malignant tumours have about 40% more radius versus benign ones. 
-17.46/12.14*100
+# This graph illustrates what the summary table I already made indicated about differences in sample concavity by whether the cancer was malignant or benign. It suggests that the answer to my second research question: "Do malignant versus benign tumours differ in their concavity (concavity_mean)? If so, by how much?" Is: Yes, malignant tumours have on average a mean concavity 300% greater than that of benign tumours. 
+0.161/0.046*100
 ```
 
-    ## [1] 143.8221
+    ## [1] 350
 
 ``` r
 ## References:
-# [1] Gnueghoidune (2022) on Stalk overflow provided syntax that was the basis / ispiration for adding the correct (grouped - not overall) mean of radius by sample diagnosis (https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object) 
-# [2] Statology (n.d.) https://www.statology.org/add-text-to-ggplot/, for labelling radii means by group
+# [1] Gnueghoidune (2022) on Stalk overflow  (https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object) 
+# [2] Statology (n.d.) https://www.statology.org/add-text-to-ggplot/, for labelling 
 ```
 
 ### Research Question 3 (RQ3)
@@ -461,7 +423,7 @@ head(cancer_sample, n=2)
     ## #   texture_worst <dbl>, perimeter_worst <dbl>, area_worst <dbl>, …
 
 ``` r
-# The following is really another way of plotting the same variables as the first & second graphing exercises, however since here (in research question 3) I am interested in analyses where diagnosis is the dependant variable, I will plot diagnosis over radii and concavity (rather than radii distribution & concavity distribution by diagnosis as in the first + second graphs created).
+# The following is really another way of plotting the same variables as the first & second graphing exercises, however since here (in research question 3) I am interested in analyses where diagnosis is the dependent variable, I will plot diagnosis over radii and concavity (rather than radii distribution & concavity distribution by diagnosis as in the first + second graphs created).
 
 cancer_sample %>% 
   mutate(diagnosis_full = ifelse(diagnosis=="M", "Malignant", "Benign")) %>% 
@@ -606,9 +568,9 @@ research questions are yielding interesting results?
 
 <!------------------------- Write your answer here ---------------------------->
 
-I think I am much closer to ansering my research questions! Regarding 1
+I think I am much closer to answering my research questions! Regarding 1
 & 2 (do cancer sample raddi (Q1) and concavity (Q2) differ between
-malignant and benign tumours?): The histograms and between-group means
+malignant and benign tumors?): The histograms and between-group means
 seem to say yes! I could formally test this, but I am more interested in
 whether I can use these metrics to predict sample diagnosis (Q3). I can
 refine that question by asking both ‘can cancer radius and concavity be
@@ -674,7 +636,7 @@ print(cancer_sample[1:8], n=10) # look at the first 8 variables in data set and 
 # It looks tidy to me
 
 
-# I think I alreddy confirms that no duplicate sample IDs exist in this set, but let's confirm before I conclude my data are tidy
+# I think I already confirmed that no duplicate sample IDs exist in this set, but let's confirm before I conclude my data are tidy
 nrow(cancer_sample) - n_distinct(cancer_sample$ID) # good - each row is it's own observation
 ```
 
@@ -850,11 +812,11 @@ cancer samples (it seems like yes, for both). As explained in 1.2 of
 this assignment: ‘I could formally test this, but I am more interested
 in whether I can use these metrics to predict sample diagnosis (Q3).’ -
 this seems like a more interesting model (because the outcome is binary
-== M or B) - and, if these analyses were not strictly for pedagodical
-purposes, a more useful (as in clinicaly) question
+== M or B) - and, if these analyses were not strictly for pedagogical
+purposes, a more useful (as in clinically) question.
 
-And I also want to examine Q4 becuase, based on fig x and fig z, we may
-have a relationship between radius and concavity that exists only in one
+I also want to examine Q4 becuase, based on fig x and fig z, we may have
+a relationship between radius and concavity that exists only in one
 level of sample diagnoses, which is of interest to me; As explained in
 1.2 of this assignment: ‘figure X shows an overall positive trend in
 cancer radii by concavity, but figure Z suggests that this might not be
@@ -988,7 +950,7 @@ broom::tidy(LogitModel_diag_by_radconc)
     ## 3 concavity_mean   27.3       3.42       8.00 1.28e-15
 
 ``` r
-# Below is the summary for my logistic regression model, notably the p.vals for each estimate for radius and concavity (ps<<.05) indicate that both radius and concavity independantly and signdificantly predict tumour diagnosis. # we can interpret them below..
+# Below is the summary for my logistic regression model, notably the p.vals for each estimate for radius and concavity (ps<<.05) indicate that both radius and concavity independently and significantly predict tumour diagnosis. # we can interpret them below..
 ```
 
 <!----------------------------------------------------------------------------->
@@ -1013,7 +975,7 @@ Y, or a single value like a regression coefficient or a p-value.
 # overall: I am going to produce the odds ratios for malignant diagnoses for radius and concavity using broom's 'tidy' # see below.
 
 
-# The model I secified is a logistic regression model - the regression estimates correspond to the change in LOG odds of receiving a malignant diagnosis (coded as 1) with each one unit change in our preditors (radii and concavity) - we take the exponential of the coefficients by specifying exp=TRUE when calling broom's "tidy" # -- this yeilds odds ratios for a malignant diagnosis associated with each predictor. 
+# The model I specified is a logistic regression model - the regression estimates correspond to the change in LOG odds of receiving a malignant diagnosis (coded as 1) with each one unit change in our predictors (radii and concavity) - we take the exponential of the coefficients by specifying exp=TRUE when calling broom's "tidy" # -- this yields odds ratios for a malignant diagnosis associated with each predictor. 
 
 broom::tidy(LogitModel_diag_by_radconc, exp=TRUE, 
             #let's also call the confindence intervals at 95% confidence:
@@ -1031,8 +993,10 @@ broom::tidy(LogitModel_diag_by_radconc, exp=TRUE,
 # for clarity: the column that contains the odds ratio estimates for radius and concavity is col 2 in the 'broom::tidy' output (called 'estimates'). I interpret them in the next code chunk.
 ```
 
+### Principally for clarity / to answer the research question:
+
 ``` r
-###### For clarity / answering the research question ###### :
+###### For clarity / answering the research question ###### (I am not sure if this is a requisite part of the assignment)
 # let's make the output a nicer table...
 tib_broomoutputMOD <- as_tibble(broom::tidy(LogitModel_diag_by_radconc, exp=TRUE, conf.int=TRUE, conf.level=0.95))
 # Table created just below ('tib_broomoutputMOD') is written to 'output' subfolder in later command (***for task 4.1)
@@ -1053,11 +1017,11 @@ outputmodgtCIs <- # refs [8] & [9]
 outputmodgtCIs
 ```
 
-<div id="lshkjtgxsn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bzeqxphvzs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
-&#10;#lshkjtgxsn .gt_table {
+&#10;#bzeqxphvzs .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1081,7 +1045,7 @@ outputmodgtCIs
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_heading {
+&#10;#bzeqxphvzs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1092,7 +1056,7 @@ outputmodgtCIs
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_title {
+&#10;#bzeqxphvzs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1103,7 +1067,7 @@ outputmodgtCIs
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#lshkjtgxsn .gt_subtitle {
+&#10;#bzeqxphvzs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1114,12 +1078,12 @@ outputmodgtCIs
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#lshkjtgxsn .gt_bottom_border {
+&#10;#bzeqxphvzs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_col_headings {
+&#10;#bzeqxphvzs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1133,7 +1097,7 @@ outputmodgtCIs
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_col_heading {
+&#10;#bzeqxphvzs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,7 +1116,7 @@ outputmodgtCIs
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#lshkjtgxsn .gt_column_spanner_outer {
+&#10;#bzeqxphvzs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1163,13 +1127,13 @@ outputmodgtCIs
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#lshkjtgxsn .gt_column_spanner_outer:first-child {
+&#10;#bzeqxphvzs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#lshkjtgxsn .gt_column_spanner_outer:last-child {
+&#10;#bzeqxphvzs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#lshkjtgxsn .gt_column_spanner {
+&#10;#bzeqxphvzs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1180,7 +1144,7 @@ outputmodgtCIs
   display: inline-block;
   width: 100%;
 }
-&#10;#lshkjtgxsn .gt_group_heading {
+&#10;#bzeqxphvzs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1204,7 +1168,7 @@ outputmodgtCIs
   border-right-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#lshkjtgxsn .gt_empty_group_heading {
+&#10;#bzeqxphvzs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1218,13 +1182,13 @@ outputmodgtCIs
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#lshkjtgxsn .gt_from_md > :first-child {
+&#10;#bzeqxphvzs .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#lshkjtgxsn .gt_from_md > :last-child {
+&#10;#bzeqxphvzs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#lshkjtgxsn .gt_row {
+&#10;#bzeqxphvzs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1242,7 +1206,7 @@ outputmodgtCIs
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#lshkjtgxsn .gt_stub {
+&#10;#bzeqxphvzs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,7 +1218,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lshkjtgxsn .gt_stub_row_group {
+&#10;#bzeqxphvzs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1267,10 +1231,10 @@ outputmodgtCIs
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#lshkjtgxsn .gt_row_group_first td {
+&#10;#bzeqxphvzs .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#lshkjtgxsn .gt_summary_row {
+&#10;#bzeqxphvzs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1279,14 +1243,14 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lshkjtgxsn .gt_first_summary_row {
+&#10;#bzeqxphvzs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_first_summary_row.thick {
+&#10;#bzeqxphvzs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#lshkjtgxsn .gt_last_summary_row {
+&#10;#bzeqxphvzs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1295,7 +1259,7 @@ outputmodgtCIs
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_grand_summary_row {
+&#10;#bzeqxphvzs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1304,7 +1268,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lshkjtgxsn .gt_first_grand_summary_row {
+&#10;#bzeqxphvzs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1313,10 +1277,10 @@ outputmodgtCIs
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_striped {
+&#10;#bzeqxphvzs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#lshkjtgxsn .gt_table_body {
+&#10;#bzeqxphvzs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1324,7 +1288,7 @@ outputmodgtCIs
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_footnotes {
+&#10;#bzeqxphvzs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1337,7 +1301,7 @@ outputmodgtCIs
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_footnote {
+&#10;#bzeqxphvzs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1345,7 +1309,7 @@ outputmodgtCIs
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lshkjtgxsn .gt_sourcenotes {
+&#10;#bzeqxphvzs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1358,36 +1322,36 @@ outputmodgtCIs
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#lshkjtgxsn .gt_sourcenote {
+&#10;#bzeqxphvzs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lshkjtgxsn .gt_left {
+&#10;#bzeqxphvzs .gt_left {
   text-align: left;
 }
-&#10;#lshkjtgxsn .gt_center {
+&#10;#bzeqxphvzs .gt_center {
   text-align: center;
 }
-&#10;#lshkjtgxsn .gt_right {
+&#10;#bzeqxphvzs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#lshkjtgxsn .gt_font_normal {
+&#10;#bzeqxphvzs .gt_font_normal {
   font-weight: normal;
 }
-&#10;#lshkjtgxsn .gt_font_bold {
+&#10;#bzeqxphvzs .gt_font_bold {
   font-weight: bold;
 }
-&#10;#lshkjtgxsn .gt_font_italic {
+&#10;#bzeqxphvzs .gt_font_italic {
   font-style: italic;
 }
-&#10;#lshkjtgxsn .gt_super {
+&#10;#bzeqxphvzs .gt_super {
   font-size: 65%;
 }
-&#10;#lshkjtgxsn .gt_two_val_uncert {
+&#10;#bzeqxphvzs .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1395,27 +1359,27 @@ outputmodgtCIs
   vertical-align: -0.25em;
   margin-left: 0.1em;
 }
-&#10;#lshkjtgxsn .gt_footnote_marks {
+&#10;#bzeqxphvzs .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
-&#10;#lshkjtgxsn .gt_asterisk {
+&#10;#bzeqxphvzs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#lshkjtgxsn .gt_slash_mark {
+&#10;#bzeqxphvzs .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
-&#10;#lshkjtgxsn .gt_fraction_numerator {
+&#10;#bzeqxphvzs .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
-&#10;#lshkjtgxsn .gt_fraction_denominator {
+&#10;#bzeqxphvzs .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1480,7 +1444,7 @@ geom_point() +
   labs(y= "0 = Benign, 1 = Malignant", x= "Cancer Sample Radius", title = "Binomial distribution curve of cancer sample diagnosis by sample radius")
 ```
 
-    ## `geom_smooth()` using formula 'y ~ x'
+    ## `geom_smooth()` using formula = 'y ~ x'
 
 ![](SaintMDA21017_files/figure-gfm/AnswerQuestions-1.png)<!-- -->
 
@@ -1493,7 +1457,7 @@ geom_point() + #[10]
   labs(y= "0 = Benign, 1 = Malignant", x= "Cancer Sample Concavity", title = "Binomial distribution curve of cancer sample diagnosis by sample concavity")
 ```
 
-    ## `geom_smooth()` using formula 'y ~ x'
+    ## `geom_smooth()` using formula = 'y ~ x'
 
 ![](SaintMDA21017_files/figure-gfm/AnswerQuestions-2.png)<!-- -->
 
@@ -1579,7 +1543,7 @@ here()
 saveRDS(LogitModel_diag_by_radconc, here("output", "Sidneys_LogitRegrsMod_diagbyRadConc.rds"))
 Logit_Model_Copy_Reread <- readRDS(here("output", "Sidneys_LogitRegrsMod_diagbyRadConc.rds"))
 
-# Stack the original and re-read model outputs on top of each other to confirm that they are the same (the output will be a double 6x7 table with rows 2-4 identical to rows 5-7)
+# Stack the original and re-read model outputs on top of each other to confirm that they are the same (the output will be a double 6x7 table with rows 1-3 identical to rows 4-6)
 rbind(broom::tidy(Logit_Model_Copy_Reread, exp=TRUE, conf.int=TRUE, conf.level=0.95), broom::tidy(LogitModel_diag_by_radconc, exp=TRUE, conf.int=TRUE, conf.level=0.95))
 ```
 
@@ -1648,7 +1612,7 @@ You’ve tagged a release for Milestone 2.
 
 Thanks to Victor Yuan for mostly putting this together.
 
-### Sidney’s References for syntax/tricks:
+### Sidney’s References:
 
 ``` r
 #[1] Gnueghoidune (2022).https://stackoverflow.com/questions/71742365/how-do-i-add-a-mean-line-to-each-panel-is-a-facet-grid-object
